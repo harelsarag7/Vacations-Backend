@@ -7,7 +7,6 @@ import { getUserById } from "../5-logic/users-logic";
 export function verifyUser(userRoles: UserRole[]) {
     return async (req: Request, res: Response, next: NextFunction) => {
         const authHeader = req.headers.authentication;
-        // console.log(authHeader);
         
         let token = "";
         if (typeof authHeader === "string") {

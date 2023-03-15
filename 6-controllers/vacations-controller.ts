@@ -28,6 +28,7 @@ vacationsRouter.get('/vacationsByPage/:pageNumber', verifyUser([UserRole.Admin, 
     
     // getting userId to validate thats only a member can get the vacations
     try {
+        
         const vacations = await getAllVacations(+sub, vacationsPerPage.toString(), offset.toString());
         
         res.json(vacations);
